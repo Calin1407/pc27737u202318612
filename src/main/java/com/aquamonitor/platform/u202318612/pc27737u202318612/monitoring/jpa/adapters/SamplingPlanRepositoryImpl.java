@@ -21,7 +21,9 @@ public class SamplingPlanRepositoryImpl implements ISamplingPlan {
 	
 	@Override
 	public boolean existsByPlanCode(PlanCode planCode) {
-		return false;
+		return repository.existsByPlanCode(
+				planCode.value()
+		);
 	}
 	
 	@Override
