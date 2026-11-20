@@ -1,8 +1,15 @@
 package com.aquamonitor.platform.u202318612.pc27737u202318612.monitoring.domain.model.aggregates;
 
 import com.aquamonitor.platform.u202318612.pc27737u202318612.monitoring.domain.model.valueobjects.*;
+import com.aquamonitor.platform.u202318612.pc27737u202318612.shared.domain.aggregates.AbstractDomainAggregateRoot;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public class SamplingPlan {
+@Getter
+@NoArgsConstructor
+public class SamplingPlan extends AbstractDomainAggregateRoot<SamplingPlan> {
+	@Setter
 	Long id;
 	PlanCode planCode;
 	StationId stationId;
@@ -12,7 +19,7 @@ public class SamplingPlan {
 	SamplingPlanStatus status;
 	String samplingNotes;
 	
-	SamplingPlan(
+	public SamplingPlan(
 			PlanCode planCode,
 			StationId stationId,
 			SamplingWindow samplingWindow,
